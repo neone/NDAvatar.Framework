@@ -34,7 +34,7 @@ public struct AvatarViewData {
 public class AvatarViewController: UIView {
     
     public var avatarViewData: AvatarViewData?
-    var avatarView: UIView!
+//    var avatarView: UIView!
     var avatarFrame: UIViewX!
     public var avatarImageView: AvatarImageView!
     
@@ -150,7 +150,7 @@ public class AvatarViewController: UIView {
     
     fileprivate func setToRound() {
         currentCorner = avatarFrame.cornerRadius
-        avatarFrame.cornerRadius = avatarView.frame.width/2
+        avatarFrame.cornerRadius = self.frame.width/2
         configureRoundAvatar()
     }
     
