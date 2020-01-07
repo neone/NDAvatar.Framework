@@ -36,13 +36,4 @@ class AvatarHelper {
         let avatarDataSource  = AvatarData(profileName: profileName, profileAvatar: profileAvatar)
         return avatarDataSource
     }
-    
-    
-    static func configureRoundAvatar(avatarView: AvatarImageView) -> AvatarImageView {
-        struct Config: AvatarImageViewConfiguration { var shape: Shape = .circle, borderColor: UIColor = UIColor(named: "GrayLightest")!, borderWidth: Float = 2}
-        avatarView.configuration = Config()
-        return avatarView
-    }
-    
-
 }
