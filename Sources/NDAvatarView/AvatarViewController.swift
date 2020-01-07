@@ -56,6 +56,9 @@ public class AvatarViewController: UIView {
     
     private func commonInit() {
         
+        let frameSize = frame.height
+        print("frameSize is: \(frameSize)")
+        
         avatarView = AvatarViewController(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
         self.addSubview(avatarView)
         avatarView.frame = self.bounds
