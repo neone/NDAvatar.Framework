@@ -8,7 +8,7 @@
 import UIKit
 
 public struct AvatarViewData {
-    var profileName: String
+    var displayName: String
     var initials: String?
     var avatarString: String?
     var isRound: Bool?
@@ -21,8 +21,7 @@ public struct AvatarViewData {
 @IBDesignable
 public class AvatarViewController: UIView {
 
-    var currentCorner: CGFloat = 0
-    
+    var avatarViewData: AvatarViewData?
     var avatarView: UIView!
     var avatarFrame: UIViewX!
     var avatarImageView: AvatarImageView!
@@ -45,6 +44,7 @@ public class AvatarViewController: UIView {
         }
     }
     
+    var currentCorner: CGFloat = 0
     @IBInspectable public var cornerRoundness: CGFloat = 0 {
         didSet {
             avatarFrame.cornerRadius = cornerRoundness
@@ -91,6 +91,35 @@ public class AvatarViewController: UIView {
         avatarFrame.addSubview(avatarImageView)
         avatarImageView.frame = self.bounds
         avatarImageView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        if let viewData = avatarViewData {
+            
+            var profileName = viewData.displayName
+            if let intials = viewData.initials {
+                profileName = intials
+            }
+            avatarImageView.dataSource = AvatarHelper.convertToAvatarData(profileName: profileName, avatarString: viewData.avatarString)
+            
+            if isRound == true {
+                configureRoundAvatar()
+            }
+            
+            if let roundness = viewData.cornerRoundness {
+                cornerRoundness = roundness
+            }
+            
+            if let border = viewData.borderColor {
+                borderColor = border
+            }
+            
+            if let width = viewData.borderWidth {
+                borderWidth = width
+            }
+            
+            if let background = viewData.backgroundColor {
+                avatarImageView.backgroundColor = background
+            }
+        }
         
     }
     
