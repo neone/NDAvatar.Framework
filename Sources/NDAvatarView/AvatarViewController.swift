@@ -17,7 +17,7 @@ public struct AvatarViewData {
     var borderColor: UIColor?
     var backgroundColor: UIColor?
     
-    public init(displayName: String, initials: String?, avatarString: String?, isRound: Bool?, cornerRoundness: CGFloat?, borderWidth: CGFloat?, borderColor: UIColor?, backgroundColor: UIColor?) {
+    public init(displayName: String, initials: String? = nil, avatarString: String? = nil, isRound: Bool? = nil, cornerRoundness: CGFloat? = nil, borderWidth: CGFloat? = nil, borderColor: UIColor? = nil, backgroundColor: UIColor? = nil) {
         self.displayName = displayName
         self.initials = initials
         self.avatarString = avatarString
