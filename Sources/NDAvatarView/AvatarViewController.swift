@@ -121,16 +121,10 @@ public class AvatarViewController: UIView {
     public func configureAvatarView(avatarViewData: AvatarViewData) {
         
         if let background = avatarViewData.backgroundColor {
-            
             var colorConfig = ColorConfig()
             colorConfig.bgColor = background
-           
             avatarImageView.configuration = colorConfig
-           
         }
-        
-        
-        
         
         var profileName = avatarViewData.displayName
         if let intials = avatarViewData.initials {
