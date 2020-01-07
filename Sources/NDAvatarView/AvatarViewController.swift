@@ -13,7 +13,7 @@ public class AvatarViewController: UIView {
     var currentCorner: CGFloat = 0
     
     var avatarView: UIView!
-    var avatarFrame: UIViewX!
+    public var avatarFrame: UIViewX!
     public var avatarImageView: AvatarImageView!
     
     @IBInspectable var isRound: Bool = false {
