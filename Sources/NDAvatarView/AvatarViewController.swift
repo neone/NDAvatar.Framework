@@ -32,6 +32,11 @@ public struct AvatarViewData {
     }
 }
 
+struct ColorConfig: AvatarImageViewConfiguration {
+               var bgColor: UIColor?
+           }
+
+
 @IBDesignable
 public class AvatarViewController: UIView {
     
@@ -115,6 +120,18 @@ public class AvatarViewController: UIView {
     
     public func configureAvatarView(avatarViewData: AvatarViewData) {
         
+        if let background = avatarViewData.backgroundColor {
+            
+            var colorConfig = ColorConfig()
+            colorConfig.bgColor = background
+           
+            avatarImageView.configuration = colorConfig
+           
+        }
+        
+        
+        
+        
         var profileName = avatarViewData.displayName
         if let intials = avatarViewData.initials {
             profileName = intials
@@ -141,9 +158,7 @@ public class AvatarViewController: UIView {
             borderWidth = width
         }
         
-        if let background = avatarViewData.backgroundColor {
-            avatarImageView.colorForBackground = background
-        }
+        
         
     }
     

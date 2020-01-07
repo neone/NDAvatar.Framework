@@ -38,6 +38,7 @@ open class AvatarImageView: UIImageView {
      
      If you would like to set this value after the data source, you need to call `refresh()` to re-draw the view correctly.
     */
+    
     open var configuration: AvatarImageViewConfiguration
         = DefaultConfiguration()
     
@@ -120,11 +121,8 @@ open class AvatarImageView: UIImageView {
             bgColor = color.cgColor
         }
         else {
-            if let color = colorForBackground {
-                bgColor = color.cgColor
-            } else {
+
             bgColor = backgroundColorFor(hash: data.avatarId)
-            }
             
         }
         
