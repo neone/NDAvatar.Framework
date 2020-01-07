@@ -12,16 +12,18 @@ public struct AvatarViewData {
     public var displayName: String
     var initials: String?
     public var avatarString: String?
+    var avatarImage: UIImage?
     var isRound: Bool?
     var cornerRoundness: CGFloat?
     var borderWidth: CGFloat?
     var borderColor: UIColor?
     var backgroundColor: UIColor?
     
-    public init(displayName: String, initials: String? = nil, avatarString: String? = nil, isRound: Bool? = nil, cornerRoundness: CGFloat? = nil, borderWidth: CGFloat? = nil, borderColor: UIColor? = nil, backgroundColor: UIColor? = nil) {
+    public init(displayName: String, initials: String? = nil, avatarString: String? = nil, avatarImage: UIImage? = nil, isRound: Bool? = nil, cornerRoundness: CGFloat? = nil, borderWidth: CGFloat? = nil, borderColor: UIColor? = nil, backgroundColor: UIColor? = nil) {
         self.displayName = displayName
         self.initials = initials
         self.avatarString = avatarString
+        self.avatarImage = avatarImage
         self.isRound = isRound
         self.cornerRoundness = cornerRoundness
         self.borderWidth = borderWidth
@@ -125,6 +127,10 @@ public class AvatarViewController: UIView {
             profileName = intials
         }
         avatarImageView.dataSource = AvatarHelper.convertToAvatarData(profileName: profileName, avatarString: avatarViewData.avatarString)
+        
+        if let image = avatarViewData.avatarImage {
+            avatarImageView.image = image
+        }
         
         if avatarViewData.isRound == true {
             setToRound()
