@@ -31,7 +31,7 @@ public class UIViewX: UIView {
         }
     }
     
-    override class var layerClass: AnyClass {
+    override public class var layerClass: AnyClass {
         get {
             return CAGradientLayer.self
         }
