@@ -103,35 +103,6 @@ public class AvatarViewController: UIView {
         avatarImageView.frame = self.bounds
         avatarImageView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
-        if let viewData = avatarViewData {
-            
-            var profileName = viewData.displayName
-            if let intials = viewData.initials {
-                profileName = intials
-            }
-            avatarImageView.dataSource = AvatarHelper.convertToAvatarData(profileName: profileName, avatarString: viewData.avatarString)
-            
-            if isRound == true {
-                configureRoundAvatar()
-            }
-            
-            if let roundness = viewData.cornerRoundness {
-                cornerRoundness = roundness
-            }
-            
-            if let border = viewData.borderColor {
-                borderColor = border
-            }
-            
-            if let width = viewData.borderWidth {
-                borderWidth = width
-            }
-            
-            if let background = viewData.backgroundColor {
-                avatarImageView.backgroundColor = background
-            }
-        }
-        
     }
     
     public override func awakeFromNib() {
@@ -143,13 +114,43 @@ public class AvatarViewController: UIView {
     
     }
     
-    public func setToRound() {
+    public func configureAvatarView(avatarViewData: AvatarViewData) {
+       
+            var profileName = avatarViewData.displayName
+            if let intials = avatarViewData.initials {
+                profileName = intials
+            }
+            avatarImageView.dataSource = AvatarHelper.convertToAvatarData(profileName: profileName, avatarString: avatarViewData.avatarString)
+            
+            if isRound == true {
+                configureRoundAvatar()
+            }
+            
+            if let roundness = avatarViewData.cornerRoundness {
+                cornerRoundness = roundness
+            }
+            
+            if let border = avatarViewData.borderColor {
+                borderColor = border
+            }
+            
+            if let width = avatarViewData.borderWidth {
+                borderWidth = width
+            }
+            
+            if let background = avatarViewData.backgroundColor {
+                avatarImageView.backgroundColor = background
+            }
+    
+    }
+    
+    fileprivate func setToRound() {
         currentCorner = avatarFrame.cornerRadius
         avatarFrame.cornerRadius = avatarView.frame.width/2
         configureRoundAvatar()
     }
     
-    public func setToDefault() {
+    fileprivate func setToDefault() {
         avatarFrame.cornerRadius = 0
         configureDefaultAvatar()
     }
