@@ -12,9 +12,9 @@ public class AvatarViewController: UIView {
 
     var currentCorner: CGFloat = 0
     
-    @IBOutlet weak var avatarView: UIView!
-    @IBOutlet weak var avatarFrame: UIViewX!
-    @IBOutlet public var avatarImageView: AvatarImageView!
+    var avatarView: UIView!
+    var avatarFrame: UIViewX!
+    public var avatarImageView: AvatarImageView!
     
     @IBInspectable var isRound: Bool = false {
         didSet {
@@ -47,7 +47,6 @@ public class AvatarViewController: UIView {
     //MARK: - Initializers and Overrides
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -56,12 +55,26 @@ public class AvatarViewController: UIView {
     }
     
     private func commonInit() {
-        if let bundle = Bundle(identifier: "com.neone.avatarview") {
-            bundle.loadNibNamed("AvatarView", owner: self, options: nil)
-            addSubview(avatarView)
-            avatarView.frame = self.bounds
-            avatarView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        }
+        
+        avatarView = AvatarViewController(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        self.addSubview(avatarView)
+        avatarView.frame = self.bounds
+        avatarView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        avatarFrame =  UIViewX(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        avatarView.addSubview(avatarFrame)
+        avatarFrame.frame = self.bounds
+        avatarFrame.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        avatarFrame.borderColor = UIColor.white
+        avatarFrame.borderWidth = 2
+        avatarFrame.cornerRadius = 30
+        avatarFrame.maskToBounds = true
+        
+        avatarImageView =  AvatarImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        avatarFrame.addSubview(avatarImageView)
+        avatarImageView.frame = self.bounds
+        avatarImageView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
     }
     
