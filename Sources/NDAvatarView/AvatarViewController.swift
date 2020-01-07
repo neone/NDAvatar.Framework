@@ -142,7 +142,7 @@ public class AvatarViewController: UIView {
         }
         
         if let background = avatarViewData.backgroundColor {
-            avatarImageView.configuration.bgColor = background
+            avatarImageView.colorForBackground = background
         }
         
     }

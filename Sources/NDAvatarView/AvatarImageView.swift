@@ -41,7 +41,7 @@ open class AvatarImageView: UIImageView {
     open var configuration: AvatarImageViewConfiguration
         = DefaultConfiguration()
     
-
+    public var colorForBackground: UIColor?
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -120,7 +120,12 @@ open class AvatarImageView: UIImageView {
             bgColor = color.cgColor
         }
         else {
+            if let color = colorForBackground {
+                bgColor = color.cgColor
+            } else {
             bgColor = backgroundColorFor(hash: data.avatarId)
+            }
+            
         }
         
         context!.setFillColor(bgColor)
