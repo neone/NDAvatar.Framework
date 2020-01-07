@@ -121,7 +121,7 @@ public class AvatarViewController: UIView {
         if let intials = avatarViewData.initials {
             profileName = intials
         }
-        avatarImageView.dataSource = AvatarHelper.convertToAvatarData(profileName: profileName, avatarString: avatarViewData.avatarString)
+        avatarImageView?.dataSource = AvatarHelper.convertToAvatarData(profileName: profileName, avatarString: avatarViewData.avatarString)
         
         if avatarViewData.isRound == true {
             setToRound()
