@@ -32,7 +32,7 @@ public struct AvatarViewData {
 @IBDesignable
 public class AvatarViewController: UIView {
 
-    var avatarViewData: AvatarViewData?
+    public var avatarViewData: AvatarViewData?
     var avatarView: UIView!
     var avatarFrame: UIViewX!
     var avatarImageView: AvatarImageView!
