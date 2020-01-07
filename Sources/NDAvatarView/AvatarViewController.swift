@@ -9,9 +9,9 @@ import UIKit
 
 
 public struct AvatarViewData {
-    var displayName: String
+    public var displayName: String
     var initials: String?
-    var avatarString: String?
+    public var avatarString: String?
     var isRound: Bool?
     var cornerRoundness: CGFloat?
     var borderWidth: CGFloat?
