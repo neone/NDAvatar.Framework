@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 public struct AvatarViewData {
     var displayName: String
     var initials: String?
