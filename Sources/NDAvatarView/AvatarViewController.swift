@@ -16,7 +16,7 @@ public class AvatarViewController: UIView {
     public var avatarFrame: UIViewX!
     public var avatarImageView: AvatarImageView!
     
-    @IBInspectable var isRound: Bool = false {
+    @IBInspectable public var isRound: Bool = false {
         didSet {
             if isRound == true {
                 setToRound()
@@ -56,8 +56,6 @@ public class AvatarViewController: UIView {
     
     private func commonInit() {
         let avatarSize = frame.height
-        
-        print("avatarSize is: \(avatarSize)")
         
         avatarView = AvatarViewController(frame: CGRect(x: 0, y: 0, width: avatarSize, height: avatarSize))
         self.addSubview(avatarView)
