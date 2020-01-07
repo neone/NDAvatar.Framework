@@ -32,7 +32,7 @@ public struct AvatarViewData {
 
 @IBDesignable
 public class AvatarViewController: UIView {
-
+    
     public var avatarViewData: AvatarViewData?
     var avatarView: UIView!
     var avatarFrame: UIViewX!
@@ -107,42 +107,42 @@ public class AvatarViewController: UIView {
     }
     
     public override func awakeFromNib() {
-    super.awakeFromNib()
-    
+        super.awakeFromNib()
+        
         if isRound == true {
             setToRound()
         }
-    
+        
     }
     
     public func configureAvatarView(avatarViewData: AvatarViewData) {
-       
-            var profileName = avatarViewData.displayName
-            if let intials = avatarViewData.initials {
-                profileName = intials
-            }
-            avatarImageView.dataSource = AvatarHelper.convertToAvatarData(profileName: profileName, avatarString: avatarViewData.avatarString)
-            
+        
+        var profileName = avatarViewData.displayName
+        if let intials = avatarViewData.initials {
+            profileName = intials
+        }
+        avatarImageView.dataSource = AvatarHelper.convertToAvatarData(profileName: profileName, avatarString: avatarViewData.avatarString)
+        
         if avatarViewData.isRound == true {
-                setToRound()
-            }
-            
-            if let roundness = avatarViewData.cornerRoundness {
-                cornerRoundness = roundness
-            }
-            
-            if let border = avatarViewData.borderColor {
-                borderColor = border
-            }
-            
-            if let width = avatarViewData.borderWidth {
-                borderWidth = width
-            }
-            
-            if let background = avatarViewData.backgroundColor {
-                avatarImageView.backgroundColor = background
-            }
-    
+            setToRound()
+        }
+        
+        if let roundness = avatarViewData.cornerRoundness {
+            cornerRoundness = roundness
+        }
+        
+        if let border = avatarViewData.borderColor {
+            borderColor = border
+        }
+        
+        if let width = avatarViewData.borderWidth {
+            borderWidth = width
+        }
+        
+        if let background = avatarViewData.backgroundColor {
+            avatarImageView.backgroundColor = background
+        }
+        
     }
     
     fileprivate func setToRound() {
