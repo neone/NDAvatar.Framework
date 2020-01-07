@@ -35,7 +35,7 @@ public class AvatarViewController: UIView {
     public var avatarViewData: AvatarViewData?
     var avatarView: UIView!
     var avatarFrame: UIViewX!
-    var avatarImageView: AvatarImageView!
+    public var avatarImageView: AvatarImageView!
     
     @IBInspectable public var profileImage: UIImage? {
         didSet {
