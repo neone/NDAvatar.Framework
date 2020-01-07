@@ -123,7 +123,7 @@ public class AvatarViewController: UIView {
             }
             avatarImageView.dataSource = AvatarHelper.convertToAvatarData(profileName: profileName, avatarString: avatarViewData.avatarString)
             
-            if isRound == true {
+        if avatarViewData.isRound == true {
                 setToRound()
             }
             
