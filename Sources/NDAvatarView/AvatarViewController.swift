@@ -91,13 +91,6 @@ public class AvatarViewController: UIView {
     private func commonInit() {
         let avatarSize = frame.height
         
-//        self.frame =  CGRect(x: 0, y: 0, width: avatarSize, height: avatarSize)
-//
-//        avatarView = AvatarViewController(frame: CGRect(x: 0, y: 0, width: avatarSize, height: avatarSize))
-//        self.addSubview(avatarView)
-//        avatarView.frame = self.bounds
-//        avatarView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        
         avatarFrame =  UIViewX(frame: CGRect(x: 0, y: 0, width: avatarSize, height: avatarSize))
         self.addSubview(avatarFrame)
         avatarFrame.frame = self.bounds
@@ -149,7 +142,7 @@ public class AvatarViewController: UIView {
         }
         
         if let background = avatarViewData.backgroundColor {
-            avatarImageView.backgroundColor = background
+            avatarImageView.configuration.bgColor = background
         }
         
     }
