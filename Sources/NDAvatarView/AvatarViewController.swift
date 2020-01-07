@@ -16,6 +16,17 @@ public struct AvatarViewData {
     var borderWidth: CGFloat?
     var borderColor: UIColor?
     var backgroundColor: UIColor?
+    
+    public init(displayName: String, initials: String?, avatarString: String?, isRound: Bool?, cornerRoundness: CGFloat?, borderWidth: CGFloat?, borderColor: UIColor?, backgroundColor: UIColor?) {
+        self.displayName = displayName
+        self.initials = initials
+        self.avatarString = avatarString
+        self.isRound = isRound
+        self.cornerRoundness = cornerRoundness
+        self.borderWidth = borderWidth
+        self.borderColor = borderColor
+        self.backgroundColor = backgroundColor
+    }
 }
 
 @IBDesignable
