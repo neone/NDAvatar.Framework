@@ -7,14 +7,33 @@
 
 import UIKit
 
+public struct AvatarViewData {
+    var profileName: String
+    var initials: String?
+    var avatarString: String?
+    var isRound: Bool?
+    var cornerRoundness: CGFloat?
+    var borderWidth: CGFloat?
+    var borderColor: UIColor?
+    var backgroundColor: UIColor?
+}
+
 @IBDesignable
 public class AvatarViewController: UIView {
 
     var currentCorner: CGFloat = 0
     
     var avatarView: UIView!
-    public var avatarFrame: UIViewX!
-    public var avatarImageView: AvatarImageView!
+    var avatarFrame: UIViewX!
+    var avatarImageView: AvatarImageView!
+    
+    @IBInspectable public var profileImage: UIImage? {
+        didSet {
+            if let image = profileImage {
+                avatarImageView.image = image
+            }
+        }
+    }
     
     @IBInspectable public var isRound: Bool = false {
         didSet {
