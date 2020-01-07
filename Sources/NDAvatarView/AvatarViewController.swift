@@ -124,7 +124,7 @@ public class AvatarViewController: UIView {
             avatarImageView.dataSource = AvatarHelper.convertToAvatarData(profileName: profileName, avatarString: avatarViewData.avatarString)
             
             if isRound == true {
-                configureRoundAvatar()
+                setToRound()
             }
             
             if let roundness = avatarViewData.cornerRoundness {
