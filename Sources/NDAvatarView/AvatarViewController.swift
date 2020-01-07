@@ -55,22 +55,22 @@ public class AvatarViewController: UIView {
     }
     
     private func commonInit() {
+        let avatarSize = frame.height
         
-        let frameSize = frame.height
-        print("frameSize is: \(frameSize)")
+        print("avatarSize is: \(avatarSize)")
         
-        avatarView = AvatarViewController(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        avatarView = AvatarViewController(frame: CGRect(x: 0, y: 0, width: avatarSize, height: avatarSize))
         self.addSubview(avatarView)
         avatarView.frame = self.bounds
         avatarView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
-        avatarFrame =  UIViewX(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        avatarFrame =  UIViewX(frame: CGRect(x: 0, y: 0, width: avatarSize, height: avatarSize))
         avatarView.addSubview(avatarFrame)
         avatarFrame.frame = self.bounds
         avatarFrame.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         avatarFrame.maskToBounds = true
         
-        avatarImageView =  AvatarImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        avatarImageView =  AvatarImageView(frame: CGRect(x: 0, y: 0, width: avatarSize, height: avatarSize))
         avatarFrame.addSubview(avatarImageView)
         avatarImageView.frame = self.bounds
         avatarImageView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
