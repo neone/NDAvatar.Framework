@@ -65,10 +65,6 @@ public class AvatarViewController: UIView {
         avatarView.addSubview(avatarFrame)
         avatarFrame.frame = self.bounds
         avatarFrame.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        
-        avatarFrame.borderColor = UIColor.white
-        avatarFrame.borderWidth = 2
-        avatarFrame.cornerRadius = 30
         avatarFrame.maskToBounds = true
         
         avatarImageView =  AvatarImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
