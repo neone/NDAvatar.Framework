@@ -156,13 +156,13 @@ public class AvatarViewController: UIView {
         
     }
     
-    fileprivate func setToRound() {
+    public func setToRound() {
         currentCorner = avatarFrame.cornerRadius
         avatarFrame.cornerRadius = self.frame.width/2
         configureRoundAvatar()
     }
     
-    fileprivate func setToDefault() {
+    public func setToDefault() {
         avatarFrame.cornerRadius = 0
         configureDefaultAvatar()
     }
