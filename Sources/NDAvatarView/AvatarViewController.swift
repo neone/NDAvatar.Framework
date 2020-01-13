@@ -42,7 +42,7 @@ public class AvatarViewController: UIView {
     
     public var avatarViewData: AvatarViewData?
 //    var avatarView: UIView!
-    var avatarFrame: UIViewX!
+    var avatarFrame: UIViewAvatarX!
     public var avatarImageView: AvatarImageView!
     
     @IBInspectable public var profileImage: UIImage? {
@@ -96,7 +96,7 @@ public class AvatarViewController: UIView {
     private func commonInit() {
         let avatarSize = frame.height
         
-        avatarFrame =  UIViewX(frame: CGRect(x: 0, y: 0, width: avatarSize, height: avatarSize))
+        avatarFrame =  UIViewAvatarX(frame: CGRect(x: 0, y: 0, width: avatarSize, height: avatarSize))
         self.addSubview(avatarFrame)
         avatarFrame.frame = self.bounds
         avatarFrame.autoresizingMask = [.flexibleHeight, .flexibleWidth]

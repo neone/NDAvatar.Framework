@@ -1,5 +1,5 @@
 //
-//  UIViewX.swift
+//  UIViewAvatarX.swift
 //  DesignableX
 //
 //  Created by Mark Moeykens on 12/31/16.
@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-public class UIViewX: UIView {
+public class UIViewAvatarX: UIView {
     
     // MARK: - Gradient
     
