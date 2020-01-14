@@ -13,19 +13,19 @@ public class UIViewAvatarX: UIView {
     
     // MARK: - Gradient
     
-    @IBInspectable var firstColor: UIColor = UIColor.white {
+    @IBInspectable public var firstColor: UIColor = UIColor.white {
         didSet {
             updateView()
         }
     }
     
-    @IBInspectable var secondColor: UIColor = UIColor.white {
+    @IBInspectable public var secondColor: UIColor = UIColor.white {
         didSet {
             updateView()
         }
     }
     
-    @IBInspectable var horizontalGradient: Bool = false {
+    @IBInspectable public var horizontalGradient: Bool = false {
         didSet {
             updateView()
         }
@@ -65,9 +65,8 @@ public class UIViewAvatarX: UIView {
         }
     }
     
-    @IBInspectable
     /// Corner radius of view; also inspectable from Storyboard.
-    var maskToBounds: Bool {
+     @IBInspectable public var maskToBounds: Bool {
         get {
             return layer.masksToBounds
         }
@@ -76,20 +75,20 @@ public class UIViewAvatarX: UIView {
         }
     }
     
-    func fadeTo(_ alpha: CGFloat, duration: TimeInterval? = 0.3) {
-        DispatchQueue.main.async {
-            UIView.animate(withDuration: duration != nil ? duration! : 0.3) {
-                self.alpha = alpha
-            }
-        }
-    }
-    
-    func fadeIn(_ duration: TimeInterval? = 0.3) {
-        fadeTo(1.0, duration: duration)
-    }
-    func fadeOut(_ duration: TimeInterval? = 0.3) {
-        fadeTo(0.0, duration: duration)
-    }
+//    func fadeTo(_ alpha: CGFloat, duration: TimeInterval? = 0.3) {
+//        DispatchQueue.main.async {
+//            UIView.animate(withDuration: duration != nil ? duration! : 0.3) {
+//                self.alpha = alpha
+//            }
+//        }
+//    }
+//    
+//    func fadeIn(_ duration: TimeInterval? = 0.3) {
+//        fadeTo(1.0, duration: duration)
+//    }
+//    func fadeOut(_ duration: TimeInterval? = 0.3) {
+//        fadeTo(0.0, duration: duration)
+//    }
     
     func updateView() {
         
