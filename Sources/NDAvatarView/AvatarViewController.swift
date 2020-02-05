@@ -63,19 +63,19 @@ struct ColorConfig: AvatarImageViewConfiguration {
     }
     
     var currentCorner: CGFloat = 0
-    @IBInspectable var cornerRoundness: CGFloat = 0 {
+    @IBInspectable public var cornerRoundness: CGFloat = 0 {
         didSet {
             avatarFrame.cornerRadius = cornerRoundness
         }
     }
     
-    @IBInspectable var borderWidth: CGFloat = 0 {
+    @IBInspectable public var borderWidth: CGFloat = 0 {
         didSet {
             avatarFrame.borderWidth = borderWidth
         }
     }
     
-    @IBInspectable var borderColor: UIColor = UIColor.white {
+    @IBInspectable public var borderColor: UIColor = UIColor.white {
         didSet {
             avatarFrame.borderColor = borderColor
         }
