@@ -64,7 +64,7 @@ public class AvatarViewController: UIView {
     }
     
     var currentCorner: CGFloat = 0
-    @IBInspectable static var cornerRoundness: CGFloat = 0 {
+    @IBInspectable public var cornerRoundness: CGFloat = 0 {
         didSet {
             avatarFrame.cornerRadius = cornerRoundness
         }
