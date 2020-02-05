@@ -63,15 +63,15 @@ struct ColorConfig: AvatarImageViewConfiguration {
     }
     
     var currentCorner: CGFloat = 0
-    @IBInspectable public var cornerRoundness: CGFloat = 0 {
+    @IBInspectable public var cornerRoundness: Double = 0 {
         didSet {
-            avatarFrame.cornerRadius = cornerRoundness
+            avatarFrame.cornerRadius = CGFloat(cornerRoundness)
         }
     }
     
-    @IBInspectable public var borderWidth: CGFloat = 0 {
+    @IBInspectable public var borderWidth: Double = 0 {
         didSet {
-            avatarFrame.borderWidth = borderWidth
+            avatarFrame.borderWidth = CGFloat(borderWidth)
         }
     }
     
@@ -143,7 +143,7 @@ struct ColorConfig: AvatarImageViewConfiguration {
         }
         
         if let roundness = avatarViewData.cornerRoundness {
-            cornerRoundness = roundness
+            cornerRoundness = Double(roundness)
         }
         
         if let border = avatarViewData.borderColor {
@@ -151,7 +151,7 @@ struct ColorConfig: AvatarImageViewConfiguration {
         }
         
         if let width = avatarViewData.borderWidth {
-            borderWidth = width
+            borderWidth = Double(width)
         }
         
         
