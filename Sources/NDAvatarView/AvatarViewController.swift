@@ -94,7 +94,7 @@ struct ColorConfig: AvatarImageViewConfiguration {
     
     private func commonInit() {
         
-        Bundle.main.loadNibNamed(String(describing: AvatarViewController.self), owner: self, options: nil)
+//        Bundle.main.loadNibNamed(String(describing: AvatarViewController.self), owner: self, options: nil)
         
         let avatarSize = frame.height
         
