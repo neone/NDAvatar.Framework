@@ -94,6 +94,9 @@ public class AvatarViewController: UIView {
     }
     
     private func commonInit() {
+        
+        Bundle.main.loadNibNamed(String(describing: AvatarViewController.self), owner: self, options: nil)
+        
         let avatarSize = frame.height
         
         avatarFrame =  UIViewAvatarX(frame: CGRect(x: 0, y: 0, width: avatarSize, height: avatarSize))
