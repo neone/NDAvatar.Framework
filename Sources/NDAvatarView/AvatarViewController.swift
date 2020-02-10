@@ -37,7 +37,7 @@ struct ColorConfig: AvatarImageViewConfiguration {
            }
 
 
-@IBDesignable public class AvatarViewController: UIView {
+@IBDesignable open class AvatarViewController: UIView {
     
     public var avatarViewData: AvatarViewData?
 //    var avatarView: UIView!
@@ -87,7 +87,7 @@ struct ColorConfig: AvatarImageViewConfiguration {
         commonInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
