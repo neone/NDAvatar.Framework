@@ -5,7 +5,7 @@
 //  Created by Ayush Newatia on 10/08/2016.
 //  Copyright © 2016 Spectrum. All rights reserved.
 //
-
+#if !os(macOS)
 import UIKit
 
 /// Used to specify the shape of the image of the user's profile picture.
@@ -183,3 +183,4 @@ public extension AvatarImageViewConfiguration {
 
 /// An implementation of `AvatarImageViewConfiguration` with default values.
 struct DefaultConfiguration: AvatarImageViewConfiguration {}
+#endif

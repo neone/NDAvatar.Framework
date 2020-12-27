@@ -5,7 +5,7 @@
 //  Created by Dave Glassco on 8/13/19.
 //  Copyright © 2019 Neone. All rights reserved.
 //
-
+#if !os(macOS)
 import Foundation
 import UIKit
 
@@ -37,3 +37,4 @@ class AvatarHelper {
         return avatarDataSource
     }
 }
+#endif

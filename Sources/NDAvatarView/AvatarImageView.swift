@@ -5,7 +5,7 @@
 //  Created by Ayush Newatia on 10/08/2016.
 //  Copyright © 2016 Spectrum. All rights reserved.
 //
-
+#if !os(macOS)
 import UIKit
 
 /**
@@ -205,3 +205,5 @@ open class AvatarImageView: UIImageView {
         layer.masksToBounds = true
     }
 }
+#endif
+

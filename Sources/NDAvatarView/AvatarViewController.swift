@@ -4,7 +4,7 @@
 //
 //  Created by Dave Glassco on 1/5/20.
 //
-
+#if !os(macOS)
 import UIKit
 
 
@@ -179,3 +179,4 @@ struct ColorConfig: AvatarImageViewConfiguration {
         avatarImageView.configuration = Config()
     }
 }
+#endif
