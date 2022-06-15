@@ -152,7 +152,7 @@ open class AvatarImageView: UIImageView {
     
     
     func textAttributesFrom(data: AvatarImageViewDataSource) -> [NSAttributedString.Key: Any] {
-        var attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: configuration.textColor]
+        var attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: configuration.textColor.resolvedColor(with: traitCollection)]
         let fontSize = bounds.size.width * configuration.textSizeFactor
         
         if let fontName = configuration.fontName {
